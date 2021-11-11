@@ -1,6 +1,6 @@
 import express from 'express';
 import config from 'config';
-import { startServer } from './helpers/v1.helper';
+import { startServer } from './helpers/start.helper';
 
 
 const port = config.get('port') as number;

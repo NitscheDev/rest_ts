@@ -1,12 +1,10 @@
 import { Router } from "express";
 const router = Router();
 
+import { root, privateRoute } from '../controllers/root.controller'
+import { protect } from '../middleweres/protect';
 
-router.get('/', (req,res) => {
-    return res.status(200).json({
-        message: 'This is the root'
-    });
-});
-
+router.get('/', root);
+router.get('/protected', protect, privateRoute);
 
 export default router;
